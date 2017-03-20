@@ -4,14 +4,12 @@ class VideoRequestsController < ApplicationController
   # GET /video_requests
   # GET /video_requests.json
   def index
-    puts "INSIDE OF INDEX METHOD"
     @video_requests = VideoRequest.all
   end
 
   # GET /video_requests/1
   # GET /video_requests/1.json
-  def show
-  end
+  def show; end
 
   # GET /video_requests/new
   def new
@@ -19,8 +17,7 @@ class VideoRequestsController < ApplicationController
   end
 
   # GET /video_requests/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /video_requests
   # POST /video_requests.json
