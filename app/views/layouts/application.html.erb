@@ -15,7 +15,15 @@
       <%= link_to 'Video Requests', video_requests_path %>
       |
       <%= link_to 'About', static_pages_about_path %>
+      |
+      <% if user_signed_in? %>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Sign In', new_user_session_path %>
+      <% end %>
     </nav>
     <%= yield %>
   </body>
 </html>
+
+
