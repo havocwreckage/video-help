@@ -1,0 +1,9 @@
+.head-nav {
+  color: red;
+  a {
+    color: green;
+    &:visited {
+      color: green;
+    }
+  }
+}
