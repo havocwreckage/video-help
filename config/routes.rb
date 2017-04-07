@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :video_requests
+  resources :channels
   namespace :static_pages do
     get :about
   end
