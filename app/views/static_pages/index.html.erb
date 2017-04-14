@@ -1,1 +1,9 @@
-<p> HOME PAGE </p>
+<p id="notice"><%= notice %></p>
+<div class='container'>
+  <h1>Video Requests</h1>
+  <div class='col-md-12'>
+    <% @video_requests.each do |video_request| %>
+      <%= render 'video_requests/list_item', video_request: video_request %>
+    <% end %>
+  </div>
+</div>
