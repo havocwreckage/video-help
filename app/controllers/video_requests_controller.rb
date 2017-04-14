@@ -22,7 +22,7 @@ class VideoRequestsController < ApplicationController
   # POST /video_requests
   # POST /video_requests.json
   def create
-    redirect_to '/' unless current_user
+    redirect_to(root_path) unless user_signed_in?
     @video_request = VideoRequest.new(video_request_params.merge(channel_id: current_user.id))
 
     respond_to do |format|

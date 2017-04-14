@@ -28,5 +28,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Video Request', new_video_request_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Video Request', new_video_request_path %>
+<% end %>
