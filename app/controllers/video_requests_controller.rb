@@ -1,6 +1,10 @@
 class VideoRequestsController < ApplicationController
   before_action :set_video_request, only: [:show, :edit, :update, :destroy]
 
+  before_filter only: [:create, :update] do
+    redirect_to(root_path) unless user_signed_in?
+  end
+
   # GET /video_requests
   # GET /video_requests.json
   def index
@@ -22,7 +26,6 @@ class VideoRequestsController < ApplicationController
   # POST /video_requests
   # POST /video_requests.json
   def create
-    redirect_to(root_path) unless user_signed_in?
     @video_request = VideoRequest.new(video_request_params.merge(channel_id: current_user.id))
 
     respond_to do |format|
