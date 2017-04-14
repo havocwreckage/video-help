@@ -22,7 +22,8 @@ class VideoRequestsController < ApplicationController
   # POST /video_requests
   # POST /video_requests.json
   def create
-    @video_request = VideoRequest.new(video_request_params)
+    redirect_to '/' unless current_user
+    @video_request = VideoRequest.new(video_request_params.merge(channel_id: current_user.id))
 
     respond_to do |format|
       if @video_request.save
