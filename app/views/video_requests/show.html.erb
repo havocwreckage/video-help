@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<body style="background-color:#63536b">
+</body>
 <p>
   <strong>Title:</strong>
   <%= @video_request.title %>
@@ -17,3 +19,15 @@
 
 <%= link_to 'Edit', edit_video_request_path(@video_request) %> |
 <%= link_to 'Back', video_requests_path %>
+ <style>
+body {
+    color: white;
+}
+
+h1 {
+    color: green;
+  font-size: 40px;
+  line-height: 18px;
+  margin: 33px;
+}
+</style>

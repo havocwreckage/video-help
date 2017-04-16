@@ -8,7 +8,7 @@ development:
   <<: *default
   database: video_help_dev
   username: postgres
-  password:
+  password: 5511josue
 
 test:
   <<: *default
@@ -20,4 +20,4 @@ production:
   <<: *default
   database: video_help_production
   username: postgres
-  password:
+  password: 5511josue

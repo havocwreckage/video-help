@@ -1,7 +1,19 @@
 <div class='homepage-video-request-item'>
-  <span> <%= pluralize(video_request.slots, 'slot') %> Left </span>
+  <span> <%= pluralize(video_request.slots, 'Slot') %> Left </span>
   <span class='homepage-video-request-item__description'><%= video_request.description %></span>
   <p> Requested By: <%= video_request.channel.name %></p>
   <%= render 'video_requests/comment_list' %>
 
 </div>
+ <style>
+body {
+    color: white;
+}
+
+h1 {
+    color: green;
+  font-size: 40px;
+  line-height: 18px;
+  margin: 33px;
+}
+</style>
