@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+
+.page-title {
+  color: green;
+  font-size: 40px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+.page-background {
+  background-color: #63536b;
+}

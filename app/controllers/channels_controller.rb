@@ -1,5 +1,10 @@
 class ChannelsController < ApplicationController
   before_filter :set_channel, only: [:show]
+
+  before_filter only: [:create, :update] do
+    redirect_to(root_path) unless user_signed_in?
+  end
+
   def index
     @channels = Channel.all
   end

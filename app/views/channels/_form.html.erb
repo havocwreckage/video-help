@@ -11,29 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+  <%= f.label :name, class: 'channel-field' %>
+  <%= f.text_field :name %>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+  <%= f.label :description, class: "channel-field" %>
+  <%= f.text_area :description %>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
- <style>
-body {
-    color: cyan;
-}
-
-h1 {
-    color: green;
-  font-size: 40px;
-  line-height: 18px;
-  margin: 33px;
-}
-</style>

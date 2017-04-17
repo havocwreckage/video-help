@@ -1,0 +1,12 @@
+body {
+  color: #fff;
+  a {
+    color: #fff;
+    &:visited {
+      color: #999;
+    }
+  }
+  p, span {
+    color: #fff;
+  }
+}
