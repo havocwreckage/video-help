@@ -16,11 +16,12 @@
     <% @video_requests.each do |video_request| %>
       <tr>
         <td><%= video_request.title %></td>
-        <td><%= video_request.description %></td>
-        <td><%= video_request.slots %></td>
-        <td><%= link_to 'Show', video_request %></td>
-        <td><%= link_to 'Edit', edit_video_request_path(video_request) %></td>
-        <td><%= link_to 'Destroy', video_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to video_request.description, video_request %></td>
+        <td><%= link_to video_request.slots, video_request %></td>
+        <% if user_signed_in? && current_user.id == video_request.channel.user_id %>
+          <td><%= link_to 'Edit', edit_video_request_path(video_request) %></td>
+          <td><%= link_to 'Destroy', video_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
 

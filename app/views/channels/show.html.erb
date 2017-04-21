@@ -10,5 +10,7 @@
   <%= @channel.description %>
 </p>
 
-<%= link_to 'Edit', edit_channel_path(@channel) %> |
+<% if user_signed_in? && current_user.id == @channel.user_id %>
+  <%= link_to 'Edit', edit_channel_path(@channel) %> |
+<% end %>
 <%= link_to 'Back', channels_path %>

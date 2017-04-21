@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :channel_id %>
+    <%= f.select :channel_id, current_user.channels.map { |channel| [channel.name, channel.id] } %>
+  </div>
+
+  <div class="field">
     <%= f.label :slots %>
     <%= f.number_field :slots %>
   </div>

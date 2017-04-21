@@ -14,6 +14,8 @@
   <strong>Slots:</strong>
   <%= @video_request.slots %>
 </p>
-
-<%= link_to 'Edit', edit_video_request_path(@video_request) %> |
+<% if user_signed_in? && current_user.id == @video_request.channel.user_id %>
+  <%= link_to 'Edit', edit_video_request_path(@video_request) %> |
+<% end %>
 <%= link_to 'Back', video_requests_path %>
+

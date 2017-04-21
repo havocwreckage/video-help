@@ -26,8 +26,7 @@ class VideoRequestsController < ApplicationController
   # POST /video_requests
   # POST /video_requests.json
   def create
-    @video_request = VideoRequest.new(video_request_params.merge(channel_id: current_user.id))
-
+    @video_request = VideoRequest.new(video_request_params)
     respond_to do |format|
       if @video_request.save
         format.html { redirect_to @video_request, notice: 'Video request was successfully created.' }
@@ -71,6 +70,6 @@ class VideoRequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_request_params
-      params.require(:video_request).permit(:title, :description, :slots)
+      params.require(:video_request).permit(:title, :description, :slots, :channel_id)
     end
 end
