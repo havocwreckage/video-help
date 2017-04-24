@@ -1,6 +1,12 @@
-<p> LIST</p>
-
-
-<!--  <% if user_signed_in? %>
- <% end %>
- -->
+<% video_request.comments.each do |comment| %>
+  <p>
+    <%= comment.user.email %>
+    <%= comment.value %>
+  </p>
+<% end %>
+<% if user_signed_in? %>
+  <%= form_for VideoRequest::Comment.new, url: comments_path(video_request.id) do |f| %>
+    <%= f.text_field :value %>
+    <%= f.submit 'Post' %>
+  <% end %>
+<% end %>

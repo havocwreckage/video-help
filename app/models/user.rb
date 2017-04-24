@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :channels
+  has_many :comments, class_name: 'VideoRequest::Comment'
 end
