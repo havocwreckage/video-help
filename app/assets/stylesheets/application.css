@@ -16,12 +16,12 @@
 
 
 .page-title {
-  color: green;
+  color: cyan;
   font-size: 40px;
   line-height: 18px;
   margin: 33px;
 }
 
 .page-background {
-  background-color: #63536b;
+  background-color: #f00a15;
 }
